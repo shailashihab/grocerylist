@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery_list</title>
+    <style>
+        table{
+            border: 2px solid black;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    
+        <h1>GROCERY LIST</h1>
+     
+
+        
+    
+    <script>
+        var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function(){
+
+        if (this.readyState===4&&this.status===200) {
+           
+            var response = JSON.parse(this.responseText);
+            console.log(response);
+            var Glist = response.products;
+            console.log(Glist);
+           
+            var i=0;
+      
+            
+            document.writeln("<table border = '2' width = 1400><th><h1>Sl.No.</h1></th><th><h1>Name</h1></th><th><h1>Quantity</h1></th><th><h1>Unit</h1></th><th><h1>Department</h1></th><th><h1>Notes</h1></th>>");
+            
+            for ( i = 0; i < Glist.length; i++) {
+                    document.writeln("<tr height =50>>");
+                 
+                    document.writeln("<td width = 200>" + Glist[i].snumber+"</td>");
+                    document.writeln("<td width = 200>" + Glist[i].name +"</td>");
+                    document.writeln("<td width = 200>" + Glist[i].quantity +"</td>");
+                    document.writeln("<td width = 200>" + Glist[i].unit +"</td>");
+                    document.writeln("<td width = 200>" + Glist[i].department +"</td>");
+                    document.writeln("<td width = 200>" + Glist[i].notes +"</td>");
+                   
+                    document.writeln("</tr>");
+
+// closing of for loop
+                
+            }
+            document.writeln("</table>");
+// closing of if loop
+        }
+    }
+    
+    xhttp.open("GET","list.json", true);
+    xhttp.send();
+
+    </script>
+</body>
+</html>
