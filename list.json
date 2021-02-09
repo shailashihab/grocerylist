@@ -62,7 +62,7 @@
             "name" : "Dishwash liquid",
             "quantity" :"1",
             "unit"  : "ltr",
-            "department" : "Cleaners or in The Health and Beauty Dept",
+            "department" : "The Health and Beauty Dept",
             "notes" : "Fairy/Jet is needed"
         },
         {
@@ -86,7 +86,7 @@
             "name" : "soap",
             "quantity" :"4",
             "unit"  : "no.s",
-            "department" : "Personal Care/The Health and Beauty",
+            "department" : "The Health and Beauty Dept",
             "notes" : "Search for Saver pack, buy 3 get 1"
         },
         {

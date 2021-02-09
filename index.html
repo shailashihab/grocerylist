@@ -17,13 +17,34 @@
         }
         
     </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </head>
+
 <body>
     
         <h1>GROCERY LIST</h1>
+        
      
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+              Department
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li onclick="dry();"><a class="dropdown-item" href="#">Dry/Baking Goods</a></li>
+              <li onclick="canned();"><a class="dropdown-item" href="#">Canned/Jarred Goods</a></li>
+              <li onclick="diary();"><a class="dropdown-item" href="#">Diary Section</a></li>
+              <li onclick="frozen();"><a class="dropdown-item" href="#">Frozen Section</a></li>
+              <li onclick="bread();"><a class="dropdown-item" href="#">Bread/ Bakery</a></li>
+              <li onclick="meat();"><a class="dropdown-item" href="#">Meat</a></li>
 
-        <button onclick="ajax();">Click for the list</button>
+              <li onclick="health();"><a class="dropdown-item" href="#">The Health and Beauty Dept</a></li>
+              <li onclick="produce();"><a class="dropdown-item" href="#">The Produce</a></li>
+              <li onclick="dryfruits();"><a class="dropdown-item" href="#">Dry Fruits Section</a></li>
+              <li onclick="seafood();"><a class="dropdown-item" href="#">The SeaFood Dept.</a></li>            </ul>
+          </div>
+        <button onclick="ajax();">Click for the complete list</button>
+        <div style="margin-left: 28.5%; margin-right: 28.5%; margin-top: 5%;" id="demo"></div>
     
     <script src="./ajax.js">
   
