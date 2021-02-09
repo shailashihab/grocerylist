@@ -8,18 +8,11 @@ function ajax(){
         if (this.readyState==4&&this.status==200) {
             var response = JSON.parse(this.responseText);
             var responseObj = response.products;
-           
-
-
             var output = "";
-            var x = "<table border = '5'>"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>";
             for (let i = 0; i < responseObj.length; i++) {
-               output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
+               output += "<tr height = 75>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
             }
-            
-            var y = "</table>";
-            // document.write(x+output+y);
-            document.getElementById("demo").innerHTML=x+output+y;
+            document.getElementById("demo").innerHTML="<table border = '5' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"+output+"</table>";
             document.getElementById("demo").style.backgroundColor="yellow";
             
                 }
@@ -40,16 +33,15 @@ function dry(){
             var response = JSON.parse(this.responseText);
             var responseObj = response.products;
             var output = "";
-            var x = ("<table border = '2' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"
-                )
+           
             for (let i = 0; i < responseObj.length; i++) {
                 if (responseObj[i].department==="Dry/Baking Goods") {
                     output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
             
                 }
             }
-            var y = "</table>";
-            document.getElementById("demo").innerHTML=x+output+y;
+           
+            document.getElementById("demo").innerHTML="<table border = '5' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"+output+"</table>";
             document.getElementById("demo").style.backgroundColor="yellow";
                 }
     }
@@ -65,8 +57,7 @@ function canned(){
             var response = JSON.parse(this.responseText);
             var responseObj = response.products;
             var output = "";
-            var x=("<table border = '2' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"
-                )
+          
             for (let i = 0; i < responseObj.length; i++) {
                 if (responseObj[i].department==="Canned/Jarred Goods") {
                     output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
@@ -74,8 +65,7 @@ function canned(){
                 }
             }
            
-            var y=("</table>");
-            document.getElementById("demo").innerHTML=x+output+y;
+            document.getElementById("demo").innerHTML="<table border = '5' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"+output+"</table>";
             document.getElementById("demo").style.backgroundColor="yellow";
                 }
     }
@@ -91,8 +81,7 @@ function diary(){
             var response = JSON.parse(this.responseText);
             var responseObj = response.products;
             var output = "";
-            var x=("<table border = '2' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"
-                )
+            
             for (let i = 0; i < responseObj.length; i++) {
                 if (responseObj[i].department==="Diary") {
                     output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
@@ -100,8 +89,7 @@ function diary(){
                 }
             }
             
-            var y=("</table>");
-            document.getElementById("demo").innerHTML=x+output+y;
+            document.getElementById("demo").innerHTML="<table border = '5' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"+output+"</table>";
             document.getElementById("demo").style.backgroundColor="yellow";
                 }
     }
@@ -117,17 +105,14 @@ function frozen(){
             var response = JSON.parse(this.responseText);
             var responseObj = response.products;
             var output = "";
-            var x=("<table border = '2' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"
-                )
+ 
             for (let i = 0; i < responseObj.length; i++) {
                 if (responseObj[i].department==="Frozen Section") {
                     output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
             
                 }
             }
-           
-            var y=("</table>");
-            document.getElementById("demo").innerHTML=x+output+y;
+            document.getElementById("demo").innerHTML="<table border = '5' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"+output+"</table>";
             document.getElementById("demo").style.backgroundColor="yellow";
                 }
     }
@@ -143,17 +128,14 @@ function bread(){
             var response = JSON.parse(this.responseText);
             var responseObj = response.products;
             var output = "";
-            var x=("<table border = '2' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"
-                )
+            
             for (let i = 0; i < responseObj.length; i++) {
                 if (responseObj[i].department==="Bread/ Bakery") {
                     output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
             
                 }
             }
-            
-            var y=("</table>");
-            document.getElementById("demo").innerHTML=x+output+y;
+            document.getElementById("demo").innerHTML="<table border = '5' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"+output+"</table>";
             document.getElementById("demo").style.backgroundColor="yellow";
                 }
     }
@@ -169,17 +151,14 @@ function meat(){
             var response = JSON.parse(this.responseText);
             var responseObj = response.products;
             var output = "";
-            var x=("<table border = '2' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"
-                )
+
             for (let i = 0; i < responseObj.length; i++) {
                 if (responseObj[i].department==="Meat") {
                     output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
             
                 }
             }
-            
-            var y=("</table>");
-            document.getElementById("demo").innerHTML=x+output+y;
+            document.getElementById("demo").innerHTML="<table border = '5' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"+output+"</table>";
             document.getElementById("demo").style.backgroundColor="yellow";
                 }
     }
@@ -195,17 +174,13 @@ function health(){
             var response = JSON.parse(this.responseText);
             var responseObj = response.products;
             var output = "";
-            var x=("<table border = '2' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"
-                )
             for (let i = 0; i < responseObj.length; i++) {
                 if (responseObj[i].department==="The Health and Beauty Dept") {
                     output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
             
                 }
             }
-            
-            var y=("</table>");
-            document.getElementById("demo").innerHTML=x+output+y;
+            document.getElementById("demo").innerHTML="<table border = '5' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"+output+"</table>";
             document.getElementById("demo").style.backgroundColor="yellow";
                 }
     }
@@ -221,17 +196,13 @@ function produce(){
             var response = JSON.parse(this.responseText);
             var responseObj = response.products;
             var output = "";
-            var x=("<table border = '2' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"
-                )
             for (let i = 0; i < responseObj.length; i++) {
                 if (responseObj[i].department==="The Produce") {
                     output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
             
                 }
             }
-            
-            var y=("</table>");
-            document.getElementById("demo").innerHTML=x+output+y;
+            document.getElementById("demo").innerHTML="<table border = '5' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"+output+"</table>";
             document.getElementById("demo").style.backgroundColor="yellow";
                 }
     }
@@ -247,17 +218,13 @@ function dryfruits(){
             var response = JSON.parse(this.responseText);
             var responseObj = response.products;
             var output = "";
-            var x=("<table border = '2' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"
-                )
             for (let i = 0; i < responseObj.length; i++) {
                 if (responseObj[i].department==="Dry Fruits Section") {
                     output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
             
                 }
             }
-            
-            var y=("</table>");
-            document.getElementById("demo").innerHTML=x+output+y;
+            document.getElementById("demo").innerHTML="<table border = '5' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"+output+"</table>";
             document.getElementById("demo").style.backgroundColor="yellow";
                 }
     }
@@ -273,17 +240,14 @@ function seafood(){
             var response = JSON.parse(this.responseText);
             var responseObj = response.products;
             var output = "";
-            var x=("<table border = '2' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"
-                )
+
             for (let i = 0; i < responseObj.length; i++) {
                 if (responseObj[i].department==="The SeaFood Dept.") {
                     output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
             
                 }
             }
-            
-            var y=("</table>");
-            document.getElementById("demo").innerHTML=x+output+y;
+            document.getElementById("demo").innerHTML="<table border = '5' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"+output+"</table>";
             document.getElementById("demo").style.backgroundColor="yellow";
                 }
     }
