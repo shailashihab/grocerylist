@@ -1,258 +1,161 @@
-function ajax(){
-
-    var output="";  
-    var xhttp = new XMLHttpRequest();
-    var dept = [];
-    
+var output=""; 
+var flag=0;
+function myajax(){
+     
+    var xhttp = new XMLHttpRequest(); 
     xhttp.onreadystatechange = function (){
         if (this.readyState==4&&this.status==200) {
             var response = JSON.parse(this.responseText);
             var responseObj = response.products;
-            var output = "";
-            for (let i = 0; i < responseObj.length; i++) {
-               output += "<tr height = 75>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
+            if (flag===1) {
+                var output="";
+                for (let i = 0; i < responseObj.length; i++) {
+                                 if (responseObj[i].department==="Dry/Baking Goods") {
+                                     output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
+                                 }
+                             }
+                           
             }
-            document.getElementById("demo").innerHTML="<table border = '5' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"+output+"</table>";
-            document.getElementById("demo").style.backgroundColor="yellow";
-            
+            else if (flag===2) {
+                var output="";
+                for (let i = 0; i < responseObj.length; i++) {
+                    if (responseObj[i].department==="Canned/Jarred Goods") {
+                        output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
+                    }
                 }
-
+               
+            }
+            else if (flag===3) {
+                var output="";
+                for (let i = 0; i < responseObj.length; i++) {
+                    if (responseObj[i].department==="Diary") {
+                        output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
+                
+                    }
+                }
+            }
+            else if (flag===4) {
+                var output="";
+                for (let i = 0; i < responseObj.length; i++) {
+                    if (responseObj[i].department==="Frozen Section") {
+                        output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
+                
+                    }
+                }
+            }
+            else if (flag===5) {
+                var output="";
+                for (let i = 0; i < responseObj.length; i++) {
+                    if (responseObj[i].department==="Bread/ Bakery") {
+                        output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
+                
+                    }
+                }
+            }
+            else if (flag===6) {
+                var output="";
+                for (let i = 0; i < responseObj.length; i++) {
+                    if (responseObj[i].department==="Meat") {
+                        output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
+                
+                    }
+                }
+            }
+            else if (flag===7) {
+                var output="";
+                for (let i = 0; i < responseObj.length; i++) {
+                    if (responseObj[i].department==="The Health and Beauty Dept") {
+                        output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
+                
+                    }
+                }
+            }
+            else if (flag===8) {
+                var output="";
+                for (let i = 0; i < responseObj.length; i++) {
+                    if (responseObj[i].department==="The Produce") {
+                        output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
+                
+                    }
+                }
+            }
+            else if (flag===9) {
+                var output="";
+                for (let i = 0; i < responseObj.length; i++) {
+                    if (responseObj[i].department==="Dry Fruits Section") {
+                        output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
+                
+                    }
+                }
+            }
+            else if (flag===10) {
+                var output="";
+                for (let i = 0; i < responseObj.length; i++) {
+                    if (responseObj[i].department==="The SeaFood Dept.") {
+                        output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
+                
+                    }
+                }
+            }
+            else if (flag===11) {
+                var output="";
+                for (let i = 0; i < responseObj.length; i++) {
+                    output += "<tr height = 75>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
+                 }
+                
+            }
+            document.getElementById("demo").innerHTML="<table border = '5'>"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"+output+"</table>";
+            document.getElementById("demo").style.backgroundColor="yellow";
+                }
     }
     xhttp.open("GET","list.json", true);
     xhttp.send();
+      
+}
 
-    
-    
+function dry(){ 
+    flag=1;
+    myajax();    
 }
-function dry(){
-    var output="";  
-    var xhttp = new XMLHttpRequest();
-    var dept = [];
-    xhttp.onreadystatechange = function (){
-        if (this.readyState==4&&this.status==200) {
-            var response = JSON.parse(this.responseText);
-            var responseObj = response.products;
-            var output = "";
-           
-            for (let i = 0; i < responseObj.length; i++) {
-                if (responseObj[i].department==="Dry/Baking Goods") {
-                    output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
-            
-                }
-            }
-           
-            document.getElementById("demo").innerHTML="<table border = '5' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"+output+"</table>";
-            document.getElementById("demo").style.backgroundColor="yellow";
-                }
-    }
-    xhttp.open("GET","list.json", true);
-    xhttp.send();    
+function canned(){ 
+    flag=2;
+    myajax();
 }
-function canned(){
-    var output="";  
-    var xhttp = new XMLHttpRequest();
-    var dept = [];
-    xhttp.onreadystatechange = function (){
-        if (this.readyState==4&&this.status==200) {
-            var response = JSON.parse(this.responseText);
-            var responseObj = response.products;
-            var output = "";
-          
-            for (let i = 0; i < responseObj.length; i++) {
-                if (responseObj[i].department==="Canned/Jarred Goods") {
-                    output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
-            
-                }
-            }
-           
-            document.getElementById("demo").innerHTML="<table border = '5' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"+output+"</table>";
-            document.getElementById("demo").style.backgroundColor="yellow";
-                }
-    }
-    xhttp.open("GET","list.json", true);
-    xhttp.send();    
-}
-function diary(){
-    var output="";  
-    var xhttp = new XMLHttpRequest();
-    var dept = [];
-    xhttp.onreadystatechange = function (){
-        if (this.readyState==4&&this.status==200) {
-            var response = JSON.parse(this.responseText);
-            var responseObj = response.products;
-            var output = "";
-            
-            for (let i = 0; i < responseObj.length; i++) {
-                if (responseObj[i].department==="Diary") {
-                    output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
-            
-                }
-            }
-            
-            document.getElementById("demo").innerHTML="<table border = '5' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"+output+"</table>";
-            document.getElementById("demo").style.backgroundColor="yellow";
-                }
-    }
-    xhttp.open("GET","list.json", true);
-    xhttp.send();    
+function diary(){ 
+    flag=3;
+    myajax();    
 }
 function frozen(){
-    var output="";  
-    var xhttp = new XMLHttpRequest();
-    var dept = [];
-    xhttp.onreadystatechange = function (){
-        if (this.readyState==4&&this.status==200) {
-            var response = JSON.parse(this.responseText);
-            var responseObj = response.products;
-            var output = "";
- 
-            for (let i = 0; i < responseObj.length; i++) {
-                if (responseObj[i].department==="Frozen Section") {
-                    output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
-            
-                }
-            }
-            document.getElementById("demo").innerHTML="<table border = '5' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"+output+"</table>";
-            document.getElementById("demo").style.backgroundColor="yellow";
-                }
-    }
-    xhttp.open("GET","list.json", true);
-    xhttp.send();    
+    flag=4;
+    myajax();    
 }
 function bread(){
-    var output="";  
-    var xhttp = new XMLHttpRequest();
-    var dept = [];
-    xhttp.onreadystatechange = function (){
-        if (this.readyState==4&&this.status==200) {
-            var response = JSON.parse(this.responseText);
-            var responseObj = response.products;
-            var output = "";
-            
-            for (let i = 0; i < responseObj.length; i++) {
-                if (responseObj[i].department==="Bread/ Bakery") {
-                    output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
-            
-                }
-            }
-            document.getElementById("demo").innerHTML="<table border = '5' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"+output+"</table>";
-            document.getElementById("demo").style.backgroundColor="yellow";
-                }
-    }
-    xhttp.open("GET","list.json", true);
-    xhttp.send();    
+    flag=5;
+    myajax();   
 }
 function meat(){
-    var output="";  
-    var xhttp = new XMLHttpRequest();
-    var dept = [];
-    xhttp.onreadystatechange = function (){
-        if (this.readyState==4&&this.status==200) {
-            var response = JSON.parse(this.responseText);
-            var responseObj = response.products;
-            var output = "";
-
-            for (let i = 0; i < responseObj.length; i++) {
-                if (responseObj[i].department==="Meat") {
-                    output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
-            
-                }
-            }
-            document.getElementById("demo").innerHTML="<table border = '5' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"+output+"</table>";
-            document.getElementById("demo").style.backgroundColor="yellow";
-                }
-    }
-    xhttp.open("GET","list.json", true);
-    xhttp.send();    
+    flag=6;
+    myajax();    
 }
 function health(){
-    var output="";  
-    var xhttp = new XMLHttpRequest();
-    var dept = [];
-    xhttp.onreadystatechange = function (){
-        if (this.readyState==4&&this.status==200) {
-            var response = JSON.parse(this.responseText);
-            var responseObj = response.products;
-            var output = "";
-            for (let i = 0; i < responseObj.length; i++) {
-                if (responseObj[i].department==="The Health and Beauty Dept") {
-                    output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
-            
-                }
-            }
-            document.getElementById("demo").innerHTML="<table border = '5' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"+output+"</table>";
-            document.getElementById("demo").style.backgroundColor="yellow";
-                }
-    }
-    xhttp.open("GET","list.json", true);
-    xhttp.send();    
+    flag=7;
+    myajax();   
 }
 function produce(){
-    var output="";  
-    var xhttp = new XMLHttpRequest();
-    var dept = [];
-    xhttp.onreadystatechange = function (){
-        if (this.readyState==4&&this.status==200) {
-            var response = JSON.parse(this.responseText);
-            var responseObj = response.products;
-            var output = "";
-            for (let i = 0; i < responseObj.length; i++) {
-                if (responseObj[i].department==="The Produce") {
-                    output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
-            
-                }
-            }
-            document.getElementById("demo").innerHTML="<table border = '5' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"+output+"</table>";
-            document.getElementById("demo").style.backgroundColor="yellow";
-                }
-    }
-    xhttp.open("GET","list.json", true);
-    xhttp.send();    
+    flag=8;
+    myajax();    
 }
 function dryfruits(){
-    var output="";  
-    var xhttp = new XMLHttpRequest();
-    var dept = [];
-    xhttp.onreadystatechange = function (){
-        if (this.readyState==4&&this.status==200) {
-            var response = JSON.parse(this.responseText);
-            var responseObj = response.products;
-            var output = "";
-            for (let i = 0; i < responseObj.length; i++) {
-                if (responseObj[i].department==="Dry Fruits Section") {
-                    output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
-            
-                }
-            }
-            document.getElementById("demo").innerHTML="<table border = '5' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"+output+"</table>";
-            document.getElementById("demo").style.backgroundColor="yellow";
-                }
-    }
-    xhttp.open("GET","list.json", true);
-    xhttp.send();    
+    flag=9;
+    myajax();    
 }
 function seafood(){
-    var output="";  
-    var xhttp = new XMLHttpRequest();
-    var dept = [];
-    xhttp.onreadystatechange = function (){
-        if (this.readyState==4&&this.status==200) {
-            var response = JSON.parse(this.responseText);
-            var responseObj = response.products;
-            var output = "";
-
-            for (let i = 0; i < responseObj.length; i++) {
-                if (responseObj[i].department==="The SeaFood Dept.") {
-                    output += "<tr height = 50>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
-            
-                }
-            }
-            document.getElementById("demo").innerHTML="<table border = '5' >"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"+output+"</table>";
-            document.getElementById("demo").style.backgroundColor="yellow";
-                }
-    }
-    xhttp.open("GET","list.json", true);
-    xhttp.send();    
+    flag=10;
+    myajax();   
 }
+function ajax(){
+    flag=11;
+    myajax();    
+    }   
 
 
