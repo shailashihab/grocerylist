@@ -100,12 +100,13 @@ function myajax(){
             else if (flag===11) {
                 var output="";
                 for (let i = 0; i < responseObj.length; i++) {
-                    output += "<tr height = 75>"+"<td width = 150>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
+                    output += "<tr>"+"<th scope='row'>"+"<center>"+responseObj[i].snumber+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].name+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].quantity+"</center>"+"</td>"+"<td  width = 150 >"+"<center>"+responseObj[i].unit+"</td>"+"</center>"+"<td width = 150 >"+"<center>"+responseObj[i].department+"</center>"+"</td>"+"<td width = 250 >"+"<center>"+responseObj[i].notes+"</center>"+"</td>"+"</tr>";   
                  }
                 
             }
-            document.getElementById("demo").innerHTML="<table border = '5'>"+"<th width = 100 >"+"Sl.no."+"</th>"+"<th width = 100 >"+"name"+"</th>"+"<th width = 100 >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th width = 100 >"+"Department"+"</th>"+"<th width = 100 >"+"notes"+"</th>"+output+"</table>";
+            document.getElementById("demo").innerHTML="<table class='table'>"+"<thead>"+"<th scope='col'>"+"Sl.no."+"</th>"+"<th scope='col' >"+"name"+"</th>"+"<th scope='col' >"+"Quantity"+"</th>"+"<th width = 100 >"+"unit"+"</th>"+"<th scope='col' >"+"Department"+"</th>"+"<th scope='col' >"+"notes"+"</th>"+"</thead>"+"<tbody>"+output+"</tbody>"+"</table>";
             document.getElementById("demo").style.backgroundColor="yellow";
+            
                 }
     }
     xhttp.open("GET","list.json", true);
